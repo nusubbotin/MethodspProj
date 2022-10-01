@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         task1();
         task2();
+        task3();
     }
 
     private static void task1() {
@@ -44,5 +45,28 @@ public class Main {
 
         int currentYear = LocalDate.now().getYear();
         checkProgVersion(0, currentYear);
+    }
+
+    private static void task3() {
+        System.out.println("Задание 3:");
+        getDeliveryTime(95);
+    }
+
+    private static void getDeliveryTime(int deliveryDistance) {
+        double deliveryTime;
+        int deliveryTimeInt;
+
+        deliveryDistance = deliveryDistance - 20;
+
+        deliveryTime = (float) deliveryDistance / 40;
+        deliveryTime = deliveryTime + 1;
+
+        deliveryTimeInt = (int) deliveryTime;
+
+        if (deliveryTime > deliveryTimeInt) {
+            deliveryTimeInt++;
+        }
+
+        System.out.println("Потребуется дней: " + deliveryTimeInt);
     }
 }
